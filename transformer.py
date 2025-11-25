@@ -3,8 +3,8 @@ from typing import List
 from itertools import groupby
 import re
 
-MARKDOWN_LINK_URL_GROUP = 2
-RAW_URL_GROUP = 3
+MARKDOWN_LINK_URL_GROUP = 1
+RAW_URL_GROUP = 2
 
 def _extract_url_from_match(match: re.Match[str]) -> str:
     if match.group(MARKDOWN_LINK_URL_GROUP):
@@ -21,7 +21,7 @@ class NormalizedPost:
         self.tags: List[str] = [] # often empty
 
 def format_links_in_text(text: str) -> str:
-    markdown_link_pattern: str = r'\[([^\]]+)\]\(([^\)]+)\)'
+    markdown_link_pattern: str = r'<(https?://[^\s]+)>'
     raw_url_pattern: str = r'(https?://[^\s]+)'
 
     # TODO: this needs more testing but i keep forgetting to post links
