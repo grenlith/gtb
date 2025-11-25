@@ -1,0 +1,29 @@
+####################################
+# examples
+# ---------
+# options:
+#   log_level: WARN
+#   timezone: America/Los_Angeles # this is in tz database format: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+# --- # each section requires this separator
+# collector:
+#   collector_type: bluesky # valid types listed below
+#   handle: darthbluesky.bsky.social # always omit the leading @
+#   post_limit: 10 # number of posts to pull to find root posts
+#                  #   maximum is 100 for atproto types
+# ---
+# collector:
+#   collector_type: mastodon
+#   handle: user@mastodon.domain
+#   post_limit: 10 # maximum is 40 for mastodon
+#
+####################################
+# collector types
+# ---------
+# bluesky     - bluesky posts, e.g. `app.bsky.feed.post`
+# kibun       - kibun statuses, e.g. `social.kibun.status`
+# mastodon    - mastodon posts
+####################################
+options:
+  log_level: WARN
+  timezone: Etc/UTC
+---

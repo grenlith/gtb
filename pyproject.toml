@@ -1,0 +1,22 @@
+[project]
+name = "gtb"
+version = "0.1.0"
+description = "gemlog tractor beam -- turn your social media posts into gemtext files"
+readme = "readme.md"
+requires-python = ">=3.14"
+dependencies = [
+    "colorlog>=6.9.0",
+    "markdownify>=1.2.0",
+    "pyyaml>=6.0.3",
+    "requests>=2.32.5",
+]
+
+[dependency-groups]
+dev = [
+    "mypy>=1.18.2",
+    "types-pyyaml>=6.0.12.20250915",
+    "types-requests>=2.32.4.20250913",
+]
+lint = [
+    "ruff>=0.14.5",
+]
