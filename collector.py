@@ -44,7 +44,7 @@ def collect_mastodon(collector_config: Collector, opts: Options) -> List[Normali
 
     r = requests.get(f"https://{acct_data[1]}/api/v1/accounts/{user_id}"
                      "/statuses?exclude_replies=true&exclude_reblogs=true"
-                     f"limit={collector_config.post_limit}")
+                     f"&limit={collector_config.post_limit}")
 
     r.raise_for_status()
     records = r.json()
